@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from .models import Message
+from .models import Message,Envsensor
 
 
 __all__ = [
-    Message
+    Message , Envsensor
 ]
