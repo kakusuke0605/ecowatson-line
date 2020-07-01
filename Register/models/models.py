@@ -40,7 +40,7 @@ class Envsensor(db.Model):
     updated_at = db.Column(db.DateTime, nullable=False, default=datetime.now, onupdate=datetime.now)
 
     def __repr__(self):
-        return '<data_id = {data_id}, line_user_id = {seosor_id}, temperature = {temperature} , humidity  = {humidity} , light = {light} , heat = {heat} , di = {di} , noise = {noise}>'.format(
+        return '<data_id = {data_id}, line_user_id = {sensor_id}, temperature = {temperature} , humidity  = {humidity} , light = {light} , heat = {heat} , di = {di} , noise = {noise}>'.format(
             data_id=self.data_id,
             sensor_id=self.sensor_id,
             temperature=self.temperature,
