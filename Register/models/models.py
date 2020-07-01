@@ -27,13 +27,13 @@ class Envsensor(db.Model):
     __tablename__ = 'envsensor'
 
     data_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    sensor_id=db.Column(db.Float(255), nullable=False)
-    temperature = db.Column(db.Float(255), nullable=False)
-    humidity = db.Column(db.Float(255), nullable=False)
-    light = db.Column(db.Float(255), nullable=False)
-    heat = db.Column(db.Float(255), nullable=False)
-    di = db.Column(db.Float(255), nullable=False)
-    noise = db.Column(db.Float(255), nullable=False)
+    sensor_id=db.Column(db.Integer, nullable=False)
+    temperature = db.Column(db.Float, nullable=False)
+    humidity = db.Column(db.Float, nullable=False)
+    light = db.Column(db.Float, nullable=False)
+    heat = db.Column(db.Float, nullable=False)
+    di = db.Column(db.Float, nullable=False)
+    noise = db.Column(db.Float, nullable=False)
 
 
     created_at = db.Column(db.DateTime, nullable=False, default=datetime.now)
