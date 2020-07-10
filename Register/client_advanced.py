@@ -19,7 +19,7 @@ user_id = config.YOUR_ID
 
 def on_connect(client, userdata, flags, respons_code):
     print('Connected to Beebotte')
-    messages = TextSendMessage(text="接続したよ")
+    messages = TextSendMessage(text="接続したよ(heroku)")
     line_bot_api.push_message(user_id, messages=messages)
     return
 
