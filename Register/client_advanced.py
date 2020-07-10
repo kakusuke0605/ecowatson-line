@@ -6,13 +6,21 @@ from . import config
 from .models.models import Envsensor
 from .database import init_db,db
 import os
+from linebot import LineBotApi
+from linebot.models import TextSendMessage
 
 data_env=[]
 data_co2=[]
 data_door=[]
+line_bot_api = LineBotApi(config.YOUR_CHANNEL_ACCESS_TOKEN)
+user_id = config.YOUR_ID
+
+
 
 def on_connect(client, userdata, flags, respons_code):
     print('Connected to Beebotte')
+    messages = TextSendMessage(text="接続したよ")
+    line_bot_api.push_message(user_id, messages=messages)
     return
 
 def on_message(client, userdata, msg):
