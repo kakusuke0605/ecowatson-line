@@ -9,10 +9,10 @@ class DevelopmentConfig:
 
     #MySQL
     SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://{user}:{password}@{host}/{database}?charset=utf8mb4'.format(**{
-        'user': os.getenv('DB_USER', 'b5ce340141e1f5'),
-        'password': os.getenv('DB_PASSWORD', '969a6a56'),
-        'host': os.getenv('DB_HOST', 'us-cdbr-east-02.cleardb.com'),
-        'database': os.getenv('DB_DATABASE', 'heroku_9de8a2b86d37394')
+        'user': os.getenv('DB_USERNAME'),
+        'password': os.getenv('DB_PASSWORD'),
+        'host': os.getenv('DB_HOSTNAME'),
+        'database': os.getenv('DB_NAME')
     })
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_ECHO = False
