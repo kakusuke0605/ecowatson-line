@@ -10,7 +10,7 @@ if __name__ == '__main__':
     topics = [
         '#',
     ]
-    sub_topics = list(map(lambda x: config.TOPIC_BASE + '/' + x, topics))
+    sub_topics = list(map(lambda x: os.environ['TOPIC_BASE'] + '/' + x, topics))
     print('Subscribe to {}'.format(', '.join(sub_topics)))
     # Give a list to subscribe() to subscribe to multiple topics.
     client.subscribe(sub_topics)

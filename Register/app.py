@@ -54,7 +54,7 @@ def create_app():
         print('メッセージ登録：{}'.format(message))
 
         #返答はオウム返し
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text=input_msg))
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text=config.UNIT))
 
 
     return app

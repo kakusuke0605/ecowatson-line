@@ -25,18 +25,19 @@ def on_message(client, userdata, msg):
         data_env.append(get_data)
 
         #herokuのDBにセンサーデータを代入
-        # envsensor = Envsensor(
-        #     data_id = get_data['data_id'],
-        #     sensor_id = get_data['sensor_id'],
-        #     temperature = get_data['temperature'],
-        #     humidity = get_data['humidity'],
-        #     light = get_data['light'],
-        #     heat = get_data['heat'],
-        #     di = get_data['di'],
-        #     noise = get_data['noise']
-        # )
-        # db.session.add(envsensor)
-        # db.session.commit()        
+        envsensor = Envsensor(
+            data_id = get_data['data_id'],
+            sensor_id = get_data['sensor_id'],
+            temperature = get_data['temperature'],
+            humidity = get_data['humidity'],
+            light = get_data['light'],
+            heat = get_data['heat'],
+            di = get_data['di'],
+            noise = get_data['noise']
+        )
+        db.session.add(envsensor)
+        db.session.commit()
+
 
     elif 'co2mini' in msg.topic:
         data_co2.append(pd.process_co2(payload_dic))
