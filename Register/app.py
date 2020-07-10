@@ -2,7 +2,8 @@
 from flask import Flask, request, abort
 from .database import init_db, db
 from .models import Message
-from .config import Channel_access_token, Channel_secret
+import os
+from . import config
 
 #ログ出力用(printはWinコマンドプロンプトで日本語が文字化けする)
 from pprint import pprint
@@ -20,8 +21,8 @@ def create_app():
     init_db(app)
 
     #LINE環境設定
-    line_bot_api = LineBotApi(Channel_access_token)
-    handler = WebhookHandler(Channel_secret)
+    line_bot_api = LineBotApi(config.YOUR_CHANNEL_ACCESS_TOKEN)
+    handler = WebhookHandler(config.YOUR_CHANNEL_SECRET)
 
     @app.route('/callback', methods=['POST'])
     def callback():

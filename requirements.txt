@@ -5,3 +5,5 @@ flask-migrate
 pymysql
 line-bot-sdk
 gunicorn
+mqbeebotte
+python-dotenv

@@ -5,7 +5,7 @@ services:
     container_name: register-python
     build: .
     ports:
-      - 5050:5000                  #ホスト側は使っていないポート：Docker側は5000番ポート
+      - 5500:5000                  #ホスト側は使っていないポート：Docker側は5000番ポート
     links:
       - mysql
     privileged: true
@@ -32,5 +32,5 @@ services:
       - ./docker/db/data:/var/lib/mysql
       - ./docker/db/sql:/docker-entrypoint-initdb.d
     ports:
-      - 3306:3306                  #ホスト側は使っていないポート：Docker側は3306番ポート
+      - 3360:3306                  #ホスト側は使っていないポート：Docker側は3306番ポート
     command: --innodb-use-native-aio=0
